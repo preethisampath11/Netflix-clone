@@ -51,7 +51,7 @@ nav {
   font-size: 15px;
 }
 .main {
-  background-image: url(assets/img/bg.png);
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/fa4630b1-ca1e-4788-94a9-eccef9f7af86/web_tall_panel/IN-en-20250407-TRIFECTA-perspective_8be2cd93-f2e6-4e34-acba-05b716385704_large.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: max(1200px, 94vw);
@@ -176,28 +176,32 @@ input::placeholder {
 .scroll-container::-webkit-scrollbar {
   display: none; /* Hide scroll for Chrome */
 }
+.card {
+  padding: 15px;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  position: relative; /* <-- Needed to anchor the .rank inside */
+}
+
 .card img {
   width: 128px;
   height: 256px;
   border-radius: 15px;
 }
 
-.card {
-    padding: 15px;
-    scroll-snap-align: start;
-    flex: 0 0 auto; /* Prevent shrinking/growing */
-  }
-
-.rank{
+/* TOP-LEFT STYLED NUMBER */
+.rank {
+  position: absolute;      /* Absolutely position inside .card */
+  top: 5px;                /* Distance from the top */
+  left: 5px;               /* Distance from the left */
+  font-size: 3rem;
   line-height: 1;
-    display: inline-block;
-    height: 1em;
-    position: relative;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.8);
-    -webkit-text-stroke: 0.125rem rgb(255, 255, 255);
-    text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
-} 
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-text-stroke: 0.125rem rgb(255, 255, 255);
+  text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+}
+ 
 #points{
   display: flex;
   /* flex-direction: row; */
